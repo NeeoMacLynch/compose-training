@@ -1,9 +1,12 @@
 package com.study.compose.training.view
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.MaterialTheme.typography
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -12,45 +15,58 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.study.compose.training.R
+import com.study.compose.training.util.DarkColors
+import com.study.compose.training.util.LightColors
 
+/**
+ * @author lynch
+ * */
 @Composable
-fun NewsStory() {
-    MaterialTheme {
+fun NewsStory(greetingName: String, title: String) {
+    MaterialTheme(
+        colors = if (isSystemInDarkTheme()) DarkColors else LightColors
+    ) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.header),
-                contentDescription = null,
+            Box(
                 modifier = Modifier
+                    .clip(shape = RoundedCornerShape(4.dp))
                     .height(180.dp)
-                    .fillMaxWidth()
-                    .clip(shape = RoundedCornerShape(2.5.dp)),
-                contentScale = ContentScale.Crop
-            )
+                    .background(colors.primary)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_hero),
+                    contentDescription = null,
+                    modifier = Modifier.fillMaxWidth(),
+                    contentScale = ContentScale.Crop
+                )
+            }
+
             Spacer(modifier = Modifier.height(16.dp))
 
             Text(
-                "A day wandering through the sandhills " +
-                        "in Shark Fin Cove, and a few of the " +
-                        "sights I saw",
-                style = typography.h6,
-                color = Color.White
+                text = title,
+                style = typography.h4,
+                fontWeight = FontWeight.Bold,
+                color = colors.onSecondary
             )
 
+            Spacer(modifier = Modifier.height(8.dp))
+
             Text(
-                "Davenport, California",
-                style = typography.body2,
-                color = Color.White
-            )
-            Text(
-                "December 2018",
+                "这里包括一些 Composable " +
+                        "以及一些 Jetpack 新特性的练习" +
+                        "欢迎学习或者提出宝贵意见",
                 style = typography.body1,
-                color = Color.White
+                color = colors.onSecondary
             )
+
+            PageFooter(name = greetingName, paddingStart = 16, colors.onSecondary)
         }
     }
 }
@@ -58,5 +74,5 @@ fun NewsStory() {
 @Preview
 @Composable
 fun PreviewNewStory() {
-    NewsStory()
+    NewsStory("登录者", "标题")
 }
