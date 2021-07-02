@@ -6,12 +6,16 @@ import com.study.compose.base.BaseActivity
 import com.study.compose.training.view.Greeting
 import com.study.compose.training.view.NewsStory
 
+/**
+ * @author lynch
+ * */
 class HomeActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-//            Greeting(name = "World")
-        NewsStory()
+            NewsStory("Lynch Lee")
         }
+
+
     }
 }
