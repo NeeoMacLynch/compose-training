@@ -62,6 +62,7 @@ fun HomeScreen(easyCards: Set<EasyCardBean>) {
             SideEffect {
                 systemUiController.setSystemBarsColor(Color.Transparent, darkIcons = !darkMode)
             }
+
             Scaffold(
                 topBar = {
                     val appName = stringResource(R.string.app_name)
@@ -94,15 +95,18 @@ fun HomeScreen(easyCards: Set<EasyCardBean>) {
 
 /**
  * 主页内容布局，
- * 实际上应该使用 LazyColumn 保证多种列表 item 不会影响性能
+ * 使用 LazyColumn 保证多种列表 item 不会影响性能
+ * 同时设置内容内边距防止全屏下导航栏与内容重叠
  * */
 @Composable
 fun HomeScreenContent(easyCards: Set<EasyCardBean>) {
-    Column(
-        modifier = Modifier
-            .verticalScroll(rememberScrollState()),
+    LazyColumn(
+        contentPadding = rememberInsetsPaddingValues(
+            insets = LocalWindowInsets.current.systemBars,
+            applyTop = false
+        ),
     ) {
-        ContentList4Easy(easyCards)
+        item{ ContentList4Easy(easyCards) }
     }
 }
 
