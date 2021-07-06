@@ -1,4 +1,4 @@
-package com.study.compose.training.util
+package com.study.compose.training.utils
 
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

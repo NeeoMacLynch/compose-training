@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">compose-training</string>
+    <string name="app_name">Lynch`s Blog</string>
+    <string name="app_logo">App logo</string>
+    <string name="easy_photo">Easy photo</string>
+    <string name="easy_list_header">这里是文章列表</string>
 </resources>

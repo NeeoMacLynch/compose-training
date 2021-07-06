@@ -3,7 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_android_36.xml" value="0.2890625" />
         <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.21666666666666667" />
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_android_design_skills.xml" value="0.2890625" />
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_android_for_developers.xml" value="0.2890625" />
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_broken_image.xml" value="0.2890625" />
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_broken_image_24.xml" value="0.2890625" />
+        <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_dehaze_24.xml" value="0.2890625" />
         <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_hero.xml" value="0.38229166666666664" />
         <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_jetpack_hero.xml" value="0.38229166666666664" />
         <entry key="..\:/Work Space/compose-training/app/src/main/res/drawable/ic_launcher_background.xml" value="0.38229166666666664" />
