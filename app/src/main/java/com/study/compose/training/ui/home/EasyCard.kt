@@ -48,12 +48,13 @@ fun EasyCard(easyCardBean: EasyCardBean) {
 @Composable
 fun EasyPhoto(resID: Int?) {
     if (resID == null) {
-        Icon(
+        Image(
             painter = painterResource(id = R.drawable.ic_broken_image),
             contentDescription = stringResource(id = R.string.easy_photo),
-            tint = MaterialTheme.colors.error,
+            contentScale = ContentScale.Inside,
             modifier = Modifier
-                .padding(top = 18.dp)
+                .clip(shape = RoundedCornerShape(4.dp))
+                .fillMaxWidth(),
         )
     }
     else {
